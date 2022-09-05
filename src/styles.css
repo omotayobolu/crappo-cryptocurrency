@@ -1,1 +1,247 @@
-/*# sourceMappingURL=styles.css.map */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+html,
+body {
+  font-family: "Rubik", sans-serif;
+}
+
+h1 {
+  font-size: 4rem;
+  font-style: bold;
+}
+
+h2 {
+  font-size: 2.5rem;
+  font-style: bold;
+  line-height: 150%;
+  color: #ffffff;
+}
+
+h3 {
+  font-size: 2rem;
+  font-style: bold;
+  line-height: 150%;
+  letter-spacing: 4%;
+}
+
+p {
+  font-size: 1rem;
+  font-style: regular;
+  letter-spacing: 1%;
+  line-height: 28px;
+  color: #e0e0e0;
+}
+
+.btn {
+  background-color: #3671e9;
+  color: #ffffff;
+  padding: 14px 32px;
+  text-align: center;
+  border-radius: 2rem;
+  font-size: 1rem;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  border: none;
+}
+
+.home {
+  background-color: #0d0d2b;
+  color: #ffffff;
+  padding: 3% 7%;
+  height: 850px;
+}
+.home header {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.home header .nav-items {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  font-size: 1rem;
+}
+.home header .nav-items .nav-link {
+  margin: 0 1rem;
+  cursor: pointer;
+}
+.home header .nav-items .nav-items-2 {
+  display: flex;
+  align-items: center;
+  margin-left: 1rem;
+}
+.home .main {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin-top: 5rem;
+}
+.home .main .main-left {
+  align-items: center;
+}
+.home .main .main-left .black-friday {
+  width: 365px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 2rem;
+}
+.home .main .main-left .black-friday .save {
+  background-color: #ffffff;
+  color: #0d0d2b;
+  padding: 4px 16px;
+  margin: 10px;
+  border-radius: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 4%;
+  line-height: 150%;
+  font-size: 1rem;
+  font-style: medium;
+}
+.home .main .main-left .black-friday span {
+  text-align: left;
+  line-height: 28;
+  letter-spacing: 1%;
+  font-style: regular;
+  color: #ffffff;
+  margin-right: 10px;
+}
+.home .main .main-left .main-header {
+  margin: 1rem 0;
+}
+.home .main .main-left .main-description {
+  width: 435px;
+}
+.home .main .main-left .main-button {
+  padding: 16px 16px 16px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  line-height: 150%;
+  font-size: 1.1rem;
+  margin-top: 1rem;
+  gap: 1.5rem;
+}
+.home .main .main-left .main-button img {
+  width: 2rem;
+  height: 2rem;
+}
+
+.why-crappo {
+  height: 865px;
+  background-color: #0d0d2b;
+  padding: 3% 7% 0;
+}
+.why-crappo .crappo-numbers {
+  margin-top: 3%;
+  display: grid;
+  gap: 99px;
+  grid-template-columns: repeat(3, 1fr);
+}
+.why-crappo .crappo-numbers .numbers {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+.why-crappo .crappo-numbers .numbers > :nth-child(1) {
+  height: 80px;
+  width: 80px;
+}
+.why-crappo .content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 121px;
+  margin-top: 15%;
+}
+.why-crappo .content-description p {
+  width: 408px;
+  margin: 1rem 0;
+}
+.why-crappo .content-description .btn {
+  padding: 16px 24px;
+  margin-top: 1rem;
+}
+
+.earn {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  text-align: center;
+  background-color: #0d0d2b;
+  height: 400px;
+}
+.earn p {
+  width: 622px;
+  font-size: 1.1rem;
+}
+
+.calculate {
+  height: 371px;
+  width: 942px;
+  box-shadow: 0px 20px 200px rgba(57, 23, 119, 0.05);
+  background-color: #ffffff;
+  margin: -14% 15% 0;
+  padding: 2rem;
+  border-radius: 1rem;
+}
+.calculate .rate form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 155px;
+}
+.calculate .rate form input {
+  width: 403px;
+  border: none;
+  border-bottom: 1px solid #828282;
+  outline: none;
+}
+.calculate .rate form select {
+  cursor: pointer;
+  width: 200px;
+  border: none;
+  border-bottom: 1px solid #828282;
+}
+.calculate .revenue {
+  margin-top: 1rem;
+}
+.calculate .revenue .heading {
+  text-transform: uppercase;
+  color: #3671e9;
+  font-style: medium;
+  letter-spacing: 4%;
+  line-height: 150%;
+  font-size: 1rem;
+}
+.calculate .revenue h3 {
+  margin-top: 1rem;
+}
+.calculate .revenue h3 span {
+  font-size: 2rem;
+  font-style: bold;
+  color: #3671e9;
+  line-height: 150%;
+  letter-spacing: 4%;
+}
+.calculate .revenue p {
+  color: #828282;
+}
+
+.trade {
+  margin-top: 5%;
+}
+.trade .trade-header {
+  display: grid;
+  place-items: center;
+  text-align: center;
+}
+.trade .trade-header h2 {
+  color: #0d0d2b;
+  width: 741px;
+  border: 1px solid red;
+}/*# sourceMappingURL=styles.css.map */

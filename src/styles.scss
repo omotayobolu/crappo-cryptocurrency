@@ -35,9 +35,26 @@ h1 {
   font-style: bold;
 }
 
+h2 {
+  font-size: 2.5rem;
+  font-style: bold;
+  line-height: 150%;
+  color: $white;
+}
+
+h3 {
+  font-size: 2rem;
+  font-style: bold;
+  line-height: 150%;
+  letter-spacing: 4%;
+}
+
 p {
   font-size: 1rem;
   font-style: regular;
+  letter-spacing: 1%;
+  line-height: 28px;
+  color: $PaymentSystemBg;
 }
 
 .btn {
@@ -49,6 +66,7 @@ p {
   font-size: 1rem;
   box-shadow: $btnBoxShadow;
   cursor: pointer;
+  border: none;
 }
 
 .home {
@@ -126,9 +144,6 @@ p {
 
       .main-description {
         width: 435px;
-        letter-spacing: 1%;
-        line-height: 28px;
-        color: $PaymentSystemBg;
       }
 
       .main-button {
@@ -139,13 +154,147 @@ p {
         line-height: 150%;
         font-size: 1.1rem;
         margin-top: 1rem;
+        gap: 1.5rem;
 
         img {
-          margin-left: 24px;
           width: 2rem;
           height: 2rem;
         }
       }
+    }
+  }
+}
+
+.why-crappo {
+  height: 865px;
+  background-color: $MainBg;
+  padding: 3% 7% 0;
+
+  .crappo-numbers {
+    margin-top: 3%;
+    display: grid;
+    gap: 99px;
+    grid-template-columns: repeat(3, 1fr);
+
+    .numbers {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+
+      > :nth-child(1) {
+        height: 80px;
+        width: 80px;
+      }
+    }
+  }
+
+  .content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 121px;
+    margin-top: 15%;
+  }
+
+  .content-description {
+    p {
+      width: 408px;
+      margin: 1rem 0;
+    }
+    .btn {
+      padding: 16px 24px;
+      margin-top: 1rem;
+    }
+  }
+}
+
+.earn {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  text-align: center;
+  background-color: $MainBg;
+  height: 400px;
+
+  p {
+    width: 622px;
+    font-size: 1.1rem;
+  }
+}
+
+.calculate {
+  height: 371px;
+  width: 942px;
+  box-shadow: $CalculateBoxShadow;
+  background-color: $white;
+  margin: -14% 15% 0;
+  padding: 2rem;
+  border-radius: 1rem;
+
+  .rate {
+    form {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 155px;
+
+      input {
+        width: 403px;
+        border: none;
+        border-bottom: 1px solid $grey;
+        outline: none;
+      }
+
+      select {
+        cursor: pointer;
+        width: 200px;
+        border: none;
+        border-bottom: 1px solid $grey;
+      }
+    }
+  }
+
+  .revenue {
+    margin-top: 1rem;
+
+    .heading {
+      text-transform: uppercase;
+      color: $hashHeader;
+      font-style: medium;
+      letter-spacing: 4%;
+      line-height: 150%;
+      font-size: 1rem;
+    }
+
+    h3 {
+      margin-top: 1rem;
+
+      span {
+        font-size: 2rem;
+        font-style: bold;
+        color: $hashHeader;
+        line-height: 150%;
+        letter-spacing: 4%;
+      }
+    }
+
+    p {
+      color: $grey;
+    }
+  }
+}
+
+.trade {
+  margin-top: 5%;
+
+  .trade-header {
+    display: grid;
+    place-items: center;
+    text-align: center;
+
+    h2 {
+      color: $MainBg;
+      width: 741px;
+      border: 1px solid red;
     }
   }
 }
