@@ -1,0 +1,151 @@
+$MainBg: #0d0d2b;
+$white: #ffffff;
+$WhiteBgHeader: #0d0d2b;
+$btnColor: #3671e9;
+$hashHeader: #3671e9;
+$hahRateBg: #fbfcfe;
+$grey: #828282;
+$CryptoCoinHover: #2b076e;
+$FeaturesBg: #2b076e;
+$CalculateBoxShadow: 0px 20px 200px rgba(57, 23, 119, 5%);
+$StartMiningBg: linear-gradient(
+  rgba(43, 7, 110, 100%),
+  rgba(13, 13, 43, 100%),
+  to bottom
+);
+$PaymentSystemBg: #e0e0e0;
+$containerDesktop: 0 10%;
+$borderRadius: 2rem;
+$btnBoxShadow: 0px 4px 4px rgba(0, 0, 0, 25%);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+html,
+body {
+  font-family: "Rubik", sans-serif;
+}
+
+h1 {
+  font-size: 4rem;
+  font-style: bold;
+}
+
+p {
+  font-size: 1rem;
+  font-style: regular;
+}
+
+.btn {
+  background-color: $btnColor;
+  color: $white;
+  padding: 14px 32px;
+  text-align: center;
+  border-radius: $borderRadius;
+  font-size: 1rem;
+  box-shadow: $btnBoxShadow;
+  cursor: pointer;
+}
+
+.home {
+  background-color: $MainBg;
+  color: $white;
+  padding: 3% 7%;
+  height: 850px;
+
+  header {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    .nav-items {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      font-size: 1rem;
+
+      .nav-link {
+        margin: 0 1rem;
+        cursor: pointer;
+      }
+
+      .nav-items-2 {
+        display: flex;
+        align-items: center;
+        margin-left: 1rem;
+      }
+    }
+  }
+
+  .main {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 5rem;
+
+    .main-left {
+      align-items: center;
+
+      .black-friday {
+        width: 365px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: rgba(255, 255, 255, 10%);
+        border-radius: $borderRadius;
+
+        .save {
+          background-color: $white;
+          color: $MainBg;
+          padding: 4px 16px;
+          margin: 10px;
+          border-radius: $borderRadius;
+          text-transform: uppercase;
+          letter-spacing: 4%;
+          line-height: 150%;
+          font-size: 1rem;
+          font-style: medium;
+        }
+
+        span {
+          text-align: left;
+          line-height: 28;
+          letter-spacing: 1%;
+          font-style: regular;
+          color: $white;
+          margin-right: 10px;
+        }
+      }
+
+      .main-header {
+        margin: 1rem 0;
+      }
+
+      .main-description {
+        width: 435px;
+        letter-spacing: 1%;
+        line-height: 28px;
+        color: $PaymentSystemBg;
+      }
+
+      .main-button {
+        padding: 16px 16px 16px 24px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        line-height: 150%;
+        font-size: 1.1rem;
+        margin-top: 1rem;
+
+        img {
+          margin-left: 24px;
+          width: 2rem;
+          height: 2rem;
+        }
+      }
+    }
+  }
+}
