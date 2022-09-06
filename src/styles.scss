@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap");
+
 $MainBg: #0d0d2b;
 $white: #ffffff;
 $WhiteBgHeader: #0d0d2b;
@@ -7,12 +9,7 @@ $hahRateBg: #fbfcfe;
 $grey: #828282;
 $CryptoCoinHover: #2b076e;
 $FeaturesBg: #2b076e;
-$CalculateBoxShadow: 0px 20px 200px rgba(57, 23, 119, 5%);
-$StartMiningBg: linear-gradient(
-  rgba(43, 7, 110, 100%),
-  rgba(13, 13, 43, 100%),
-  to bottom
-);
+
 $PaymentSystemBg: #e0e0e0;
 $containerDesktop: 0 10%;
 $borderRadius: 2rem;
@@ -47,6 +44,10 @@ h3 {
   font-style: bold;
   line-height: 150%;
   letter-spacing: 4%;
+}
+
+ul {
+  list-style-type: none;
 }
 
 p {
@@ -140,6 +141,7 @@ p {
 
       .main-header {
         margin: 1rem 0;
+        width: 558px;
       }
 
       .main-description {
@@ -224,7 +226,7 @@ p {
 .calculate {
   height: 371px;
   width: 942px;
-  box-shadow: $CalculateBoxShadow;
+  box-shadow: 0px 20px 200px rgba(57, 23, 119, 5%);
   background-color: $white;
   margin: -14% 15% 0;
   padding: 2rem;
@@ -242,6 +244,13 @@ p {
         border: none;
         border-bottom: 1px solid $grey;
         outline: none;
+        padding-bottom: 0.5rem;
+        color: $MainBg;
+        font-style: regular;
+
+        &::placeholder {
+          color: $MainBg;
+        }
       }
 
       select {
@@ -284,7 +293,7 @@ p {
 }
 
 .trade {
-  margin-top: 5%;
+  margin: 5% 7%;
 
   .trade-header {
     display: grid;
@@ -294,7 +303,258 @@ p {
     h2 {
       color: $MainBg;
       width: 741px;
-      border: 1px solid red;
+    }
+  }
+
+  .coins {
+    margin-top: 3rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+
+    .coin {
+      height: 433px;
+      width: 370px;
+      padding: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      box-shadow: $btnBoxShadow;
+      border-radius: 16px;
+
+      .coin-heading {
+        margin-top: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+
+        h3 {
+          color: $MainBg;
+        }
+
+        p {
+          text-transform: uppercase;
+          font-size: 1.1rem;
+          line-height: 150%;
+          color: $grey;
+        }
+      }
+
+      .description {
+        width: 322px;
+        margin-top: 1.5rem;
+
+        p {
+          color: $grey;
+        }
+      }
+
+      button {
+        margin-top: 2rem;
+        padding: 16px 16px 16px 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 24px;
+        font-size: 1.1rem;
+      }
+
+      .arrow-right {
+        margin-top: 2rem;
+      }
+
+      &:hover {
+        background-color: $CryptoCoinHover;
+        cursor: pointer;
+
+        .coin-heading {
+          h3,
+          p {
+            color: $white;
+          }
+        }
+
+        .description p {
+          color: $white;
+        }
+      }
+    }
+  }
+}
+
+.features {
+  height: 1874px;
+  background-color: $FeaturesBg;
+  color: $white;
+  padding: 5% 7%;
+
+  .features-header {
+    display: grid;
+    place-items: center;
+    text-align: center;
+
+    h2 {
+      width: 758px;
+    }
+  }
+
+  .features-content {
+    margin-top: 5rem;
+
+    .content {
+      margin-bottom: 8rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-direction: row;
+
+      .content-left {
+        width: 454px;
+
+        p {
+          margin: 2rem 0;
+        }
+
+        button {
+          padding: 16px 32px;
+          font-size: 1.1rem;
+        }
+      }
+    }
+
+    .content:nth-of-type(2) {
+      flex-direction: row-reverse;
+
+      .content-right {
+        margin-left: -10%;
+      }
+
+      .content-left {
+        p {
+          width: 408px;
+        }
+      }
+    }
+  }
+}
+
+.mining {
+  height: 392px;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(43, 7, 110, 100%),
+    rgba(13, 13, 43, 100%)
+  );
+  padding: 5% 7%;
+
+  .start-mining {
+    width: 100%;
+    height: 216px;
+    color: $white;
+    background-color: $btnColor;
+    border-radius: 1rem;
+    padding: 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .mining-left {
+      width: 500px;
+
+      h3 {
+        color: $white;
+      }
+
+      p {
+        width: 350px;
+        margin-top: 1rem;
+      }
+    }
+
+    .mining-right {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 560px;
+
+      input {
+        width: 370px;
+        border: none;
+        outline: none;
+        background: none;
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid $white;
+
+        &::placeholder {
+          color: $white;
+          letter-spacing: 1%;
+        }
+      }
+
+      button {
+        background-color: $white;
+        color: $MainBg;
+        font-size: 1.1rem;
+        font-style: medium;
+        border-radius: 2rem;
+      }
+    }
+  }
+}
+
+footer {
+  height: 552px;
+  background-color: $MainBg;
+  color: $white;
+  padding: 5% 7% 3%;
+
+  .footer-contents {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: flex-start;
+
+    .footer-header {
+      font-size: 1.25rem;
+      font-style: medium;
+      margin-bottom: 2rem;
+    }
+
+    li {
+      margin: 1rem 0;
+      cursor: pointer;
+
+      &:hover {
+        color: $grey;
+      }
+    }
+
+    .footer4 {
+      width: 355px;
+
+      .payment-systems {
+        margin-top: 2rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+  }
+
+  .footer-bottom {
+    margin-top: 8rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .social-links {
+      > img {
+        cursor: pointer;
+        margin: 0 1rem;
+      }
     }
   }
 }

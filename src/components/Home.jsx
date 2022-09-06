@@ -3,7 +3,7 @@ import React from "react";
 import Logo from "../assets/Logo.png";
 import Divider from "../assets/Divider.png";
 import Illustration from "../assets/Illustration.png";
-import ArrowRight from "../assets/Arrow Right.png";
+import ArrowRight from "../assets/Arrow Right1.png";
 
 const Home = () => {
   return (
