@@ -6,7 +6,7 @@ const Calculate = () => {
       <div className="rate">
         <form>
           <input type="text" placeholder="Enter your hash rate" />
-          <select>
+          <select name="">
             <option value="TH/s">TH/s</option>
             <option value="TH/s">H/s</option>
             <option value="TH/s">KH/s</option>

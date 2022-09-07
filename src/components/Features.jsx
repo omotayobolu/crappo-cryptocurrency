@@ -1,4 +1,5 @@
 import React from "react";
+import FeatureBackgroundImage from "../assets/o.png";
 
 import FeaturesData from "../data/FeaturesData";
 
@@ -23,6 +24,7 @@ const Features = () => {
           </div>
         ))}
       </div>
+      <img src={FeatureBackgroundImage} className="feature-bg-1" alt="" />
     </section>
   );
 };

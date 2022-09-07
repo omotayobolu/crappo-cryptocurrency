@@ -15,6 +15,23 @@ $containerDesktop: 0 10%;
 $borderRadius: 2rem;
 $btnBoxShadow: 0px 4px 4px rgba(0, 0, 0, 25%);
 
+$breakpoints: (
+  "mobile": 641px,
+  "tablet": 961px,
+);
+
+@mixin tablet {
+  @media (max-width: map-get($breakpoints, "tablet")) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: map-get($breakpoints, "mobile")) {
+    @content;
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -68,23 +85,42 @@ p {
   box-shadow: $btnBoxShadow;
   cursor: pointer;
   border: none;
+
+  &:hover {
+    opacity: 0.8;
+  }
 }
 
 .home {
+  position: relative;
   background-color: $MainBg;
   color: $white;
   padding: 3% 7%;
   height: 850px;
+  overflow: hidden;
+
+  @include tablet {
+    height: 100%;
+  }
+
+  @include mobile {
+    padding: 4%;
+  }
 
   header {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    align-items: center;
 
     .nav-items {
       display: flex;
       align-items: center;
       justify-content: flex-end;
       font-size: 1rem;
+
+      @include tablet {
+        flex-direction: column;
+      }
 
       .nav-link {
         margin: 0 1rem;
@@ -100,9 +136,18 @@ p {
   }
 
   .main {
+    position: relative;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     margin-top: 5rem;
+
+    @include tablet {
+      grid-template-columns: 1fr;
+    }
+
+    @include mobile {
+      // grid-template-columns: 1fr;
+    }
 
     .main-left {
       align-items: center;
@@ -141,7 +186,7 @@ p {
 
       .main-header {
         margin: 1rem 0;
-        width: 558px;
+        width: 100%;
       }
 
       .main-description {
@@ -164,6 +209,32 @@ p {
         }
       }
     }
+
+    .main-right {
+      img {
+        max-width: 100%;
+      }
+    }
+  }
+
+  .background-image-1 {
+    position: absolute;
+    left: 10rem;
+    top: 25rem;
+
+    @include tablet {
+      display: none;
+    }
+  }
+
+  .background-image-2 {
+    position: absolute;
+    right: -22rem;
+    top: 20rem;
+
+    @include tablet {
+      display: none;
+    }
   }
 }
 
@@ -172,40 +243,75 @@ p {
   background-color: $MainBg;
   padding: 3% 7% 0;
 
+  @include tablet {
+    height: 100%;
+  }
+
+  @include mobile {
+    padding: 2% 4%;
+  }
+
   .crappo-numbers {
     margin-top: 3%;
     display: grid;
     gap: 99px;
     grid-template-columns: repeat(3, 1fr);
 
+    @include tablet {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include mobile {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
     .numbers {
       display: flex;
       align-items: center;
       gap: 1.5rem;
+    }
+  }
+}
 
-      > :nth-child(1) {
-        height: 80px;
-        width: 80px;
-      }
+.content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 121px;
+  margin-top: 15%;
+
+  img {
+    max-width: 100%;
+
+    @include tablet {
+      order: 2;
+      text-align: center;
     }
   }
 
-  .content {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 121px;
-    margin-top: 15%;
+  @include tablet {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+.content-description {
+  @include tablet {
+    order: 1;
+    text-align: center;
   }
 
-  .content-description {
-    p {
-      width: 408px;
-      margin: 1rem 0;
+  p {
+    width: 408px;
+    margin: 1rem 0;
+
+    @include tablet {
+      width: 100%;
     }
-    .btn {
-      padding: 16px 24px;
-      margin-top: 1rem;
-    }
+  }
+  .btn {
+    padding: 16px 24px;
+    margin-top: 1rem;
   }
 }
 
@@ -216,10 +322,16 @@ p {
   text-align: center;
   background-color: $MainBg;
   height: 400px;
+  padding-top: 2rem;
+
+  @include tablet {
+    padding-top: 5rem;
+  }
 
   p {
     width: 622px;
-    font-size: 1.1rem;
+    margin-top: 1rem;
+    font-size: 1.15rem;
   }
 }
 
@@ -231,6 +343,10 @@ p {
   margin: -14% 15% 0;
   padding: 2rem;
   border-radius: 1rem;
+
+  @include tablet {
+    max-width: 100%;
+  }
 
   .rate {
     form {
@@ -295,6 +411,10 @@ p {
 .trade {
   margin: 5% 7%;
 
+  @include mobile {
+    margin: 5% 4%;
+  }
+
   .trade-header {
     display: grid;
     place-items: center;
@@ -312,6 +432,11 @@ p {
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
 
+    @include tablet {
+      grid-template-columns: 1fr;
+      place-items: center;
+    }
+
     .coin {
       height: 433px;
       width: 370px;
@@ -323,6 +448,12 @@ p {
       text-align: center;
       box-shadow: $btnBoxShadow;
       border-radius: 16px;
+      cursor: pointer;
+
+      &.active {
+        background-color: $CryptoCoinHover;
+        color: $white;
+      }
 
       .coin-heading {
         margin-top: 2rem;
@@ -330,6 +461,13 @@ p {
         align-items: center;
         justify-content: center;
         gap: 0.5rem;
+
+        &.active {
+          h3,
+          p {
+            color: $white;
+          }
+        }
 
         h3 {
           color: $MainBg;
@@ -346,6 +484,12 @@ p {
       .description {
         width: 322px;
         margin-top: 1.5rem;
+
+        &.active {
+          p {
+            color: $white;
+          }
+        }
 
         p {
           color: $grey;
@@ -365,31 +509,21 @@ p {
       .arrow-right {
         margin-top: 2rem;
       }
-
-      &:hover {
-        background-color: $CryptoCoinHover;
-        cursor: pointer;
-
-        .coin-heading {
-          h3,
-          p {
-            color: $white;
-          }
-        }
-
-        .description p {
-          color: $white;
-        }
-      }
     }
   }
 }
 
 .features {
-  height: 1874px;
+  height: 1974px;
   background-color: $FeaturesBg;
   color: $white;
   padding: 5% 7%;
+  position: relative;
+
+  @include tablet {
+    padding: 5% 4%;
+    height: 100%;
+  }
 
   .features-header {
     display: grid;
@@ -403,16 +537,27 @@ p {
 
   .features-content {
     margin-top: 5rem;
+    position: relative;
 
     .content {
-      margin-bottom: 8rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
       flex-direction: row;
 
+      @include tablet {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+      }
+
       .content-left {
         width: 454px;
+        max-width: 100%;
+
+        @include tablet {
+          width: 100%;
+        }
 
         p {
           margin: 2rem 0;
@@ -428,8 +573,20 @@ p {
     .content:nth-of-type(2) {
       flex-direction: row-reverse;
 
+      @include tablet {
+        flex-direction: column;
+      }
+
       .content-right {
         margin-left: -10%;
+
+        @include tablet {
+          margin-left: 0;
+        }
+
+        img {
+          max-width: 100%;
+        }
       }
 
       .content-left {
@@ -438,6 +595,12 @@ p {
         }
       }
     }
+  }
+
+  .feature-bg-1 {
+    position: absolute;
+    top: -2rem;
+    max-width: 100%;
   }
 }
 
@@ -449,6 +612,7 @@ p {
     rgba(13, 13, 43, 100%)
   );
   padding: 5% 7%;
+  position: relative;
 
   .start-mining {
     width: 100%;
@@ -460,6 +624,8 @@ p {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
+    overflow: hidden;
 
     .mining-left {
       width: 500px;
@@ -502,6 +668,21 @@ p {
         border-radius: 2rem;
       }
     }
+
+    .mining-bg-1 {
+      position: absolute;
+      left: 1.5rem;
+    }
+
+    .mining-bg-2 {
+      position: absolute;
+      right: 1%;
+      bottom: -5%;
+    }
+  }
+
+  img {
+    max-width: 100%;
   }
 }
 

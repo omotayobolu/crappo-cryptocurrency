@@ -4,6 +4,7 @@ import Logo from "../assets/Logo.png";
 import Divider from "../assets/Divider.png";
 import Illustration from "../assets/Illustration.png";
 import ArrowRight from "../assets/Arrow Right1.png";
+import BackgroundImage from "../assets/[].png";
 
 const Home = () => {
   return (
@@ -44,6 +45,8 @@ const Home = () => {
           <img src={Illustration} alt="" />
         </div>
       </div>
+      <img className="background-image-1" src={BackgroundImage} alt="" />
+      <img className="background-image-2" src={BackgroundImage} alt="" />
     </div>
   );
 };
