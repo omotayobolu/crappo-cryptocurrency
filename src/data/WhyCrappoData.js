@@ -2,23 +2,43 @@ import BarChart from "../assets/Bar Chart.png";
 import Person from "../assets/Person.png";
 import Earth from "../assets/Earth.png";
 
+import NumberCounter from "number-counter";
+
 const WhyCrappoData = [
   {
     id: "reason1",
     image: <img src={BarChart} alt="" />,
-    number: "$30B",
+    number: (
+      <NumberCounter
+        className="counter"
+        end={30}
+        start={0}
+        delay="2"
+        preFix="$"
+      />
+    ),
     description: "Digital Curency Exchanged",
   },
   {
     id: "reason2",
     image: <img src={Person} alt="" />,
-    number: "10M+",
+    number: (
+      <NumberCounter
+        className="counter"
+        end={10}
+        start={0}
+        delay={1}
+        postFix="M+"
+      />
+    ),
     description: "Trusted Wallets Investor",
   },
   {
     id: "reason3",
     image: <img src={Earth} alt="" />,
-    number: "195",
+    number: (
+      <NumberCounter className="counter" end={195} start={100} delay={2} />
+    ),
     description: "Countries Supported",
   },
 ];

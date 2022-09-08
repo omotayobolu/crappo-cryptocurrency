@@ -11,7 +11,7 @@ const WhyCrappo = () => {
           <div className="numbers" key={why.id}>
             {why.image}
             <div className="description">
-              <h2>{why.number}</h2>
+              <h2 className="counter">{why.number}</h2>
               <p>{why.description}</p>
             </div>
           </div>

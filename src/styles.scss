@@ -351,6 +351,10 @@ p {
       display: flex;
       align-items: center;
       gap: 1.5rem;
+
+      .counter {
+        font-size: 2rem;
+      }
     }
   }
 }
