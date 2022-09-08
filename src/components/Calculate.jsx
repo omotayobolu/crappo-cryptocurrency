@@ -13,11 +13,13 @@ const Calculate = () => {
             <option value="TH/s">MH/s</option>
             <option value="TH/s">GH/s</option>
           </select>
-          <button className="btn">Calculate</button>
+          <div>
+            <button className="btn">Calculate</button>
+          </div>
         </form>
       </div>
       <div className="revenue">
-        <span className="heading">Estimated 24 hour revenue</span>
+        <span className="heading">Estimated 24 hour revenue:</span>
         <h3>
           0.055 130 59 ETH<span> ($1275)</span>
         </h3>
