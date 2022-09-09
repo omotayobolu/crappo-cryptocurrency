@@ -5,7 +5,7 @@ import FeaturesData from "../data/FeaturesData";
 
 const Features = () => {
   return (
-    <section className="features">
+    <section className="features" id="Features">
       <div className="features-header">
         <h2>
           Market sentiments, portfolio, and run the infrastructure of your

@@ -111,42 +111,6 @@ p {
   }
 }
 
-.nav-btn {
-  background: transparent;
-  border: none;
-  outline: none;
-  color: $white;
-  cursor: pointer;
-  padding: 5px;
-  visibility: hidden;
-  opacity: 0;
-  text-align: right;
-  font-size: 3rem;
-  width: 2rem;
-  text-align: right;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  position: absolute;
-  right: 2rem;
-
-  @include tablet {
-    visibility: visible;
-    opacity: 1;
-  }
-}
-
-.nav-close-btn {
-  position: absolute;
-  top: 2rem;
-  right: 2rem;
-}
-
-.responsive_nav {
-  transform: none;
-  z-index: 20;
-}
-
 .home {
   position: relative;
   background-color: $MainBg;
@@ -175,20 +139,6 @@ p {
       font-size: 1rem;
 
       @include tablet {
-        position: fixed;
-        top: 0;
-        left: 0;
-        height: 100vh;
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        gap: 2rem;
-        transition: 1s;
-        transform: translateY(-100vh);
-        background-color: $MainBg;
-        z-index: 10;
       }
 
       .nav-link {
@@ -208,6 +158,11 @@ p {
         display: flex;
         align-items: center;
         margin-left: 1rem;
+
+        @include tablet {
+          margin-left: 0;
+          margin-top: 1rem;
+        }
       }
     }
   }
@@ -230,6 +185,7 @@ p {
       align-items: center;
 
       .black-friday {
+        position: relative;
         width: 365px;
         height: 40px;
         display: flex;
@@ -237,6 +193,10 @@ p {
         justify-content: space-between;
         background-color: rgba(255, 255, 255, 10%);
         border-radius: $borderRadius;
+
+        @include mobile {
+          width: 100%;
+        }
 
         .save {
           background-color: $white;
@@ -249,6 +209,7 @@ p {
           line-height: 150%;
           font-size: 1rem;
           font-style: medium;
+          z-index: 3;
         }
 
         span {
@@ -354,6 +315,10 @@ p {
 
       .counter {
         font-size: 2rem;
+
+        @include mobile {
+          font-size: 1.5rem;
+        }
       }
     }
   }
@@ -447,15 +412,16 @@ p {
 
   .rate {
     form {
-      display: flex;
-      justify-content: space-between;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
       align-items: center;
       height: 155px;
+      gap: 4rem;
 
       @include tablet {
+        display: flex;
         flex-direction: column;
-        justify-content: flex-start;
-        gap: 4rem;
+        gap: 2rem;
         height: 100%;
         margin-bottom: 2rem;
       }
@@ -479,6 +445,7 @@ p {
       }
 
       select {
+        padding-bottom: 0.5rem;
         cursor: pointer;
         width: 200px;
         border: none;
@@ -576,7 +543,7 @@ p {
       }
 
       @include mobile {
-        width: 80%;
+        width: 320px;
       }
 
       &.active {
@@ -613,6 +580,7 @@ p {
       .description {
         width: 322px;
         margin-top: 1.5rem;
+        padding: 0 1rem;
 
         &.active {
           p {
@@ -664,7 +632,11 @@ p {
     }
 
     h2 {
-      width: 100%;
+      width: 758px;
+
+      @include tablet {
+        width: 100%;
+      }
     }
   }
 
@@ -815,10 +787,11 @@ p {
         outline: none;
         background: none;
         padding-bottom: 0.5rem;
+        color: $white;
         border-bottom: 1px solid $white;
 
         &::placeholder {
-          color: $white;
+          color: $grey;
           letter-spacing: 1%;
         }
 

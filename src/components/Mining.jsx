@@ -4,7 +4,7 @@ import VectorMiningBitcoin from "../assets/Vector-mining-bitcoin.png";
 
 const Mining = () => {
   return (
-    <section className="mining">
+    <section className="mining" id="Mine">
       <div className="start-mining">
         <div className="mining-left">
           <h3>Start mining now</h3>

@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React from "react";
 
 import { FaBars, FaTimes } from "react-icons/fa";
 import Logo from "../assets/Logo.png";
@@ -6,35 +6,41 @@ import Divider from "../assets/Divider.png";
 import Illustration from "../assets/Illustration.png";
 import ArrowRight from "../assets/Arrow Right1.png";
 import BackgroundImage from "../assets/[].png";
+import { Link } from "react-scroll";
 
 const Home = () => {
-  const navRef = useRef();
-
-  const showNavbar = () => {
-    navRef.current.classList.toggle("responsive_nav");
-  };
-
   return (
     <div className="home">
       <header>
         <img src={Logo} alt="" />
-        <div ref={navRef} className="nav-items">
-          <div className="nav-link">Products</div>
-          <div className="nav-link">Features</div>
-          <div className="nav-link">About</div>
-          <div className="nav-link">Contact</div>
+        <ul className="nav-items nav-open">
+          <li>
+            <Link className="nav-link" to="Trade" spy={true} smooth={true}>
+              Products
+            </Link>
+          </li>
+          <li>
+            <Link className="nav-link" to="Features" spy={true} smooth={true}>
+              Features
+            </Link>
+          </li>
+          <li className="nav-link">About</li>
+          <li className="nav-link">
+            <Link className="nav-link" to="Contact" spy={true} smooth={true}>
+              Contact
+            </Link>
+          </li>
+
           <div className="nav-items-2">
             <div className="nav-link">Login</div>
             <img src={Divider} alt="" />
-            <button className="btn nav-link">Register</button>
+            <button className="btn nav-link">
+              <Link to="Mine" spy={true} smooth={true}>
+                Register
+              </Link>
+            </button>
           </div>
-          <button className="nav-btn nav-close-btn" onClick={showNavbar}>
-            <FaTimes />
-          </button>
-        </div>
-        <button className="nav-btn" onClick={showNavbar}>
-          <FaBars />
-        </button>
+        </ul>
       </header>
       <div className="main">
         <div className="main-left">
