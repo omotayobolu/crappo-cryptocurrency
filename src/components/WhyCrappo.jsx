@@ -8,7 +8,12 @@ const WhyCrappo = () => {
     <main className="why-crappo">
       <div className="crappo-numbers">
         {WhyCrappoData.map((why) => (
-          <div className="numbers" key={why.id}>
+          <div
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            className="numbers"
+            key={why.id}
+          >
             {why.image}
             <div className="description">
               <h2 className="counter">{why.number}</h2>
@@ -19,8 +24,17 @@ const WhyCrappo = () => {
       </div>
 
       <div className="content">
-        <img src={Illustrations} alt="" />
-        <div className="content-description">
+        <img
+          src={Illustrations}
+          data-aos="fade-left"
+          data-aos-duration="2000"
+          alt=""
+        />
+        <div
+          data-aos="fade-right"
+          data-aos-duration="2000"
+          className="content-description"
+        >
           <h2>Why you should choose CRAPPO</h2>
           <p>
             Experience the next generation cryptocurrency platform. No financial

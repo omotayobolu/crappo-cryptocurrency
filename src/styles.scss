@@ -42,6 +42,7 @@ $breakpoints: (
 html,
 body {
   font-family: "Rubik", sans-serif;
+  overflow-x: hidden;
 }
 
 h1 {
@@ -111,6 +112,25 @@ p {
   }
 }
 
+.logo {
+  transform: scale(1.1);
+}
+
+.toggle {
+  display: none;
+  position: absolute;
+  right: 2rem;
+  font-size: 2rem;
+  color: $white;
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  @include tablet {
+    display: block;
+  }
+}
+
 .home {
   position: relative;
   background-color: $MainBg;
@@ -133,12 +153,14 @@ p {
     align-items: center;
 
     .nav-items {
+      position: relative;
       display: flex;
       align-items: center;
       justify-content: flex-end;
       font-size: 1rem;
 
       @include tablet {
+        flex-direction: column;
       }
 
       .nav-link {
@@ -151,6 +173,7 @@ p {
 
         @include tablet {
           font-size: 1.3rem;
+          margin: 1rem 0;
         }
       }
 
@@ -574,6 +597,11 @@ p {
           font-size: 1.1rem;
           line-height: 150%;
           color: $grey;
+          margin-top: -0.5rem;
+
+          @include mobile {
+            font-size: 0.9rem;
+          }
         }
       }
 
@@ -831,7 +859,6 @@ footer {
   background-color: $MainBg;
   color: $white;
   padding: 5% 7% 3%;
-  width: 100%;
 
   @include tablet {
     padding: 10% 4% 3%;

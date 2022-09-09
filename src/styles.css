@@ -82,6 +82,22 @@ p {
   opacity: 0.8;
 }
 
+.toggle {
+  display: none;
+  position: absolute;
+  right: 2rem;
+  font-size: 2rem;
+  color: #ffffff;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+@media (max-width: 1024px) {
+  .toggle {
+    display: block;
+  }
+}
+
 .home {
   position: relative;
   background-color: #0d0d2b;
@@ -106,10 +122,16 @@ p {
   align-items: center;
 }
 .home header .nav-items {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: flex-end;
   font-size: 1rem;
+}
+@media (max-width: 1024px) {
+  .home header .nav-items {
+    flex-direction: column;
+  }
 }
 .home header .nav-items .nav-link {
   margin: 0 1rem;
@@ -121,6 +143,7 @@ p {
 @media (max-width: 1024px) {
   .home header .nav-items .nav-link {
     font-size: 1.3rem;
+    margin: 1rem 0;
   }
 }
 .home header .nav-items .nav-items-2 {
@@ -533,6 +556,12 @@ p {
   font-size: 1.1rem;
   line-height: 150%;
   color: #828282;
+  margin-top: -0.5rem;
+}
+@media (max-width: 641px) {
+  .trade .coins .coin .coin-heading p {
+    font-size: 0.9rem;
+  }
 }
 .trade .coins .coin .description {
   width: 322px;
@@ -772,7 +801,6 @@ footer {
   background-color: #0d0d2b;
   color: #ffffff;
   padding: 5% 7% 3%;
-  width: 100%;
 }
 @media (max-width: 1024px) {
   footer {

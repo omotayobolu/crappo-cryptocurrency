@@ -4,7 +4,12 @@ import VectorMiningBitcoin from "../assets/Vector-mining-bitcoin.png";
 
 const Mining = () => {
   return (
-    <section className="mining" id="Mine">
+    <section
+      className="mining"
+      id="Mine"
+      data-aos="fade"
+      data-aos-duration="3000"
+    >
       <div className="start-mining">
         <div className="mining-left">
           <h3>Start mining now</h3>

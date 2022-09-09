@@ -2,7 +2,7 @@ import React from "react";
 
 const Calculate = () => {
   return (
-    <div className="calculate">
+    <div className="calculate" data-aos="fade" data-aos-duration="3000">
       <div className="rate">
         <form onSubmit={(e) => e.preventDefault()}>
           <input type="text" placeholder="Enter your hash rate" />
