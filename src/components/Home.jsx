@@ -26,7 +26,7 @@ const Home = () => {
               Products
             </Link>
           </li>
-          <li className="nav-link">
+          <li>
             <Link className="nav-link" to="Features" spy={true} smooth={true}>
               Features
             </Link>
@@ -41,7 +41,7 @@ const Home = () => {
           <div className="nav-items-2">
             <div className="nav-link">Login</div>
             <img src={Divider} alt="" />
-            <button className="btn nav-link">
+            <button className="btn">
               <Link to="Mine" spy={true} smooth={true}>
                 Register
               </Link>

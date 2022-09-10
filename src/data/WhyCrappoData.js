@@ -37,7 +37,7 @@ const WhyCrappoData = [
     id: "reason3",
     image: <img src={Earth} alt="" />,
     number: (
-      <NumberCounter className="counter" end={195} start={100} delay={3} />
+      <NumberCounter className="counter" end={195} start={100} delay={4} />
     ),
     description: "Countries Supported",
   },

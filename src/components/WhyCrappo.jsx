@@ -10,7 +10,7 @@ const WhyCrappo = () => {
         {WhyCrappoData.map((why) => (
           <div
             data-aos="fade-up"
-            data-aos-duration="1000"
+            data-aos-duration="5000"
             className="numbers"
             key={why.id}
           >
