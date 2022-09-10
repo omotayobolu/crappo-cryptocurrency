@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-scroll";
 
 import Logo from "../assets/Logo.png";
 import Visa from "../assets/Visa.png";
@@ -20,11 +21,27 @@ const Footer = () => {
         <div className="footer2">
           <div className="footer-header">Quick Link</div>
           <ul>
-            <li>Home</li>
-            <li>Products</li>
+            <li>
+              <Link className="nav-link" to="Home" spy={true} smooth={true}>
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link className="nav-link" to="Trade" spy={true} smooth={true}>
+                Products
+              </Link>
+            </li>
             <li>About</li>
-            <li>Features</li>
-            <li>Contact</li>
+            <li>
+              <Link className="nav-link" to="Features" spy={true} smooth={true}>
+                Features
+              </Link>
+            </li>
+            <li>
+              <Link className="nav-link" to="Contact" spy={true} smooth={true}>
+                Contact
+              </Link>
+            </li>
           </ul>
         </div>
         <div className="footer3">

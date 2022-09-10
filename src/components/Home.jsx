@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useRef } from "react";
 
 import { FaBars, FaTimes } from "react-icons/fa";
 import Logo from "../assets/Logo.png";
@@ -9,61 +9,50 @@ import BackgroundImage from "../assets/[].png";
 import { Link } from "react-scroll";
 
 const Home = () => {
-  const [toggleMenu, setToggleMenu] = useState(false);
+  const navRef = useRef();
 
-  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
-
-  useEffect(() => {
-    const changeWidth = () => {
-      setScreenWidth(window.innerWidth);
-    };
-
-    window.addEventListener("resize", changeWidth);
-
-    return () => {
-      window.removeEventListener("resize", changeWidth);
-    };
-  });
-
-  const toggleNav = () => {
-    setToggleMenu(!toggleMenu);
+  const showNavbar = () => {
+    navRef.current.classList.toggle("responsive_nav");
+    console.log(navRef.current.classList);
   };
 
   return (
-    <div className="home">
+    <div className="home" id="Home">
       <header>
         <img className="logo" src={Logo} alt="" />
-        {(toggleMenu || screenWidth > 1024) && (
-          <ul className="nav-items ">
-            <li>
-              <Link className="nav-link" to="Trade" spy={true} smooth={true}>
-                Products
-              </Link>
-            </li>
-            <li>
-              <Link className="nav-link" to="Features" spy={true} smooth={true}>
-                Features
-              </Link>
-            </li>
-            <li className="nav-link">About</li>
-            <li>
-              <Link className="nav-link" to="Contact" spy={true} smooth={true}>
-                Contact
-              </Link>
-            </li>
+        <ul ref={navRef} className="nav-items">
+          <li>
+            <Link className="nav-link" to="Trade" spy={true} smooth={true}>
+              Products
+            </Link>
+          </li>
+          <li className="nav-link">
+            <Link className="nav-link" to="Features" spy={true} smooth={true}>
+              Features
+            </Link>
+          </li>
+          <li className="nav-link">About</li>
+          <li>
+            <Link className="nav-link" to="Contact" spy={true} smooth={true}>
+              Contact
+            </Link>
+          </li>
 
-            <div className="nav-items-2">
-              <div className="nav-link">Login</div>
-              <img src={Divider} alt="" />
-              <button className="btn nav-link">
-                <Link to="Mine" spy={true} smooth={true}>
-                  Register
-                </Link>
-              </button>
-            </div>
-          </ul>
-        )}
-        <button onClick={toggleNav} className="toggle">
+          <div className="nav-items-2">
+            <div className="nav-link">Login</div>
+            <img src={Divider} alt="" />
+            <button className="btn nav-link">
+              <Link to="Mine" spy={true} smooth={true}>
+                Register
+              </Link>
+            </button>
+          </div>
+          <button onClick={showNavbar} className="nav-btn nav-close-btn">
+            <FaTimes />
+          </button>
+        </ul>
+
+        <button onClick={showNavbar} className="nav-btn">
           <FaBars />
         </button>
       </header>
@@ -74,7 +63,9 @@ const Home = () => {
           data-aos-duration="2000"
         >
           <div className="black-friday">
-            <div className="save">75% save</div>
+            <div data-aos="fade-left" data-aos-duration="3000" className="save">
+              75% save
+            </div>
             <span>For the Black Friday Weekend</span>
           </div>
           <h1 className="main-header">

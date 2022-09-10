@@ -18,8 +18,6 @@ const Trade = () => {
       <div className="coins">
         {CryptocurrenciesData.map((crypto) => (
           <div
-            data-aos="fade-up"
-            data-aos-duration="2000"
             onClick={() => toggleActive(crypto.id)}
             key={crypto.id}
             className={active === crypto.id ? "coin active" : "coin"}

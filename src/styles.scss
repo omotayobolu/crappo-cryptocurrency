@@ -37,6 +37,7 @@ $breakpoints: (
   padding: 0;
   box-sizing: border-box;
   font-size: 16px;
+  outline: none;
 }
 
 html,
@@ -116,19 +117,36 @@ p {
   transform: scale(1.1);
 }
 
-.toggle {
-  display: none;
+.nav-btn {
+  cursor: pointer;
+  width: 2rem;
+  border: none;
+  outline: none;
+  background: none;
+  color: $white;
+  padding: 5px;
+  visibility: hidden;
+  opacity: 0;
   position: absolute;
   right: 2rem;
+  top: 1%;
   font-size: 2rem;
-  color: $white;
-  background: none;
-  border: none;
-  cursor: pointer;
 
   @include tablet {
-    display: block;
+    visibility: visible;
+    opacity: 1;
   }
+}
+
+.nav-close-btn {
+  position: absolute;
+  right: 2rem;
+  top: 1.5rem;
+}
+
+.responsive_nav {
+  transform: none;
+  z-index: 5;
 }
 
 .home {
@@ -161,6 +179,16 @@ p {
 
       @include tablet {
         flex-direction: column;
+        justify-content: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-color: $MainBg;
+        transition: 1s;
+        transform: translateY(-100vh);
+        z-index: 10;
       }
 
       .nav-link {
@@ -172,7 +200,7 @@ p {
         }
 
         @include tablet {
-          font-size: 1.3rem;
+          font-size: 1.5rem;
           margin: 1rem 0;
         }
       }
@@ -185,6 +213,7 @@ p {
         @include tablet {
           margin-left: 0;
           margin-top: 1rem;
+          gap: 1rem;
         }
       }
     }
