@@ -733,7 +733,7 @@ p {
 
       @include tablet {
         flex-direction: column;
-        gap: 2.5rem;
+        gap: 1rem;
       }
 
       .content-left {
@@ -902,6 +902,10 @@ p {
     .mining-bg-1 {
       position: absolute;
       left: 1.5rem;
+
+      @include tablet {
+        display: none;
+      }
     }
 
     .mining-bg-2 {
