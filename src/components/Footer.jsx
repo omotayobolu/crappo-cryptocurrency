@@ -64,7 +64,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="footer-bottom">
-        <p>©2021 CRAPPO. All rights reserved</p>
+        <p>©2022 CRAPPO. All rights reserved</p>
         <div className="social-links">
           <img src={Facebook} alt="" />
           <img src={Instagram} alt="" />

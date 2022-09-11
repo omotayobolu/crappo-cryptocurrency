@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useEffect, useState } from "react";
 
 import { FaBars, FaTimes } from "react-icons/fa";
 import Logo from "../assets/Logo.png";
@@ -9,50 +9,71 @@ import BackgroundImage from "../assets/[].png";
 import { Link } from "react-scroll";
 
 const Home = () => {
-  const navRef = useRef();
+  const [toggleMenu, setToggleMenu] = useState(false);
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
 
-  const showNavbar = () => {
-    navRef.current.classList.toggle("responsive_nav");
-    console.log(navRef.current.classList);
+  const toggleNav = () => {
+    setToggleMenu(!toggleMenu);
   };
+
+  useEffect(() => {
+    const changeWidth = () => {
+      setScreenWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", changeWidth);
+
+    return () => {
+      window.addEventListener("resize", changeWidth);
+    };
+  }, []);
 
   return (
     <div className="home" id="Home">
       <header>
         <img className="logo" src={Logo} alt="" />
-        <ul ref={navRef} className="nav-items">
-          <li>
-            <Link className="nav-link" to="Trade" spy={true} smooth={true}>
-              Products
-            </Link>
-          </li>
-          <li>
-            <Link className="nav-link" to="Features" spy={true} smooth={true}>
-              Features
-            </Link>
-          </li>
-          <li className="nav-link">About</li>
-          <li>
-            <Link className="nav-link" to="Contact" spy={true} smooth={true}>
-              Contact
-            </Link>
-          </li>
-
-          <div className="nav-items-2">
-            <div className="nav-link">Login</div>
-            <img src={Divider} alt="" />
-            <button className="btn">
-              <Link to="Mine" spy={true} smooth={true}>
-                Register
+        {(toggleMenu || screenWidth > 500) && (
+          <ul
+            className="nav-items"
+            data-aos="fade-left"
+            data-aos-duration="1000"
+          >
+            <li className="nav-link">
+              <Link className="nav-text" to="Trade" spy={true} smooth={true}>
+                Products
               </Link>
-            </button>
-          </div>
-          <button onClick={showNavbar} className="nav-btn nav-close-btn">
-            <FaTimes />
-          </button>
-        </ul>
+            </li>
+            <li className="nav-link">
+              <Link className="nav-text" to="Features" spy={true} smooth={true}>
+                Features
+              </Link>
+            </li>
+            <li className="nav-link">
+              <Link className="nav-text" to="Home" spy={true} smooth={true}>
+                About
+              </Link>
+            </li>
+            <li className="nav-link">
+              <Link className="nav-text" to="Contact" spy={true} smooth={true}>
+                Contact
+              </Link>
+            </li>
 
-        <button onClick={showNavbar} className="nav-btn">
+            <div className="nav-items-2">
+              <div className="nav-link">Login</div>
+              <img src={Divider} alt="" />
+              <button className="btn">
+                <Link to="Mine" spy={true} smooth={true}>
+                  Register
+                </Link>
+              </button>
+            </div>
+            <button onClick={toggleNav} className="nav-btn">
+              <FaTimes />
+            </button>
+          </ul>
+        )}
+        <button onClick={toggleNav} className="nav-btn">
           <FaBars />
         </button>
       </header>

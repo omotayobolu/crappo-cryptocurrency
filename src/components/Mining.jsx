@@ -8,7 +8,7 @@ const Mining = () => {
       className="mining"
       id="Mine"
       data-aos="fade"
-      data-aos-duration="3000"
+      data-aos-duration="1000"
     >
       <div className="start-mining">
         <div className="mining-left">
