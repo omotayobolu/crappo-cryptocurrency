@@ -314,10 +314,6 @@ p {
           height: 2rem;
           margin-left: 0.5rem;
         }
-
-        @include tablet {
-          gap: 3rem;
-        }
       }
     }
 
@@ -381,10 +377,6 @@ p {
       display: flex;
       align-items: center;
       gap: 1.5rem;
-
-      @include tablet {
-        gap: 2.5rem;
-      }
 
       .counter {
         font-size: 2rem;
@@ -499,7 +491,7 @@ p {
 
       @include tablet {
         grid-template-columns: 1fr;
-        gap: 3rem;
+        gap: 2rem;
         height: 100%;
         margin-bottom: 2rem;
       }
@@ -686,8 +678,6 @@ p {
         font-size: 1.1rem;
 
         @include tablet {
-          gap: 3rem;
-
           > img {
             margin-left: 0.5rem;
           }
@@ -743,7 +733,7 @@ p {
 
       @include tablet {
         flex-direction: column;
-        gap: 5rem;
+        gap: 2.5rem;
       }
 
       .content-left {
@@ -755,7 +745,7 @@ p {
         }
 
         p {
-          margin: 2rem 0;
+          margin: 2rem 0 1rem;
         }
 
         button {
@@ -841,7 +831,7 @@ p {
       flex-direction: column;
       padding: 1rem;
       height: 100%;
-      gap: 4rem;
+      gap: 2rem;
     }
 
     .mining-left {
@@ -875,13 +865,12 @@ p {
         flex-direction: column;
         width: 100%;
         justify-content: flex-start;
-        gap: 2rem;
+        gap: 1rem;
       }
 
       input {
         width: 370px;
         border: none;
-        outline: none;
         background: none;
         padding-bottom: 0.5rem;
         color: $white;
@@ -980,12 +969,11 @@ footer {
         margin-top: 2rem;
         display: flex;
         flex-direction: row;
-        gap: 3rem;
+        justify-content: space-between;
         align-items: center;
         text-align: center;
 
         @include tablet {
-          gap: 1rem;
         }
       }
     }

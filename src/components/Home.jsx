@@ -32,7 +32,7 @@ const Home = () => {
     <div className="home" id="Home">
       <header>
         <img className="logo" src={Logo} alt="" />
-        {(toggleMenu || screenWidth > 500) && (
+        {(toggleMenu || screenWidth > 1024) && (
           <ul
             className="nav-items"
             data-aos="fade-left"
